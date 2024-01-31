@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:signup"
         xmlns:hc="https://handyorg.github.io/handycontrol" 
         xmlns:Lay="clr-namespace:LayUI.Wpf.Controls;assembly=LayUI.Wpf"
-        xmlns:ClassComponent="clr-namespace:TemplateClassLibrary.ClassComponent;assembly=TemplateClassLibrary"
         x:Class="signup.MainWindow"
         mc:Ignorable="d"
         ActiveGlowColor="Purple"
@@ -104,7 +103,6 @@
                     <Button Name="Btn38" Content="38" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="70,334,0,0" FontFamily="SimSun" Grid.Column="1"/>
                     <Button Name="Btn30" Content="30" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="134,275,0,0" FontFamily="SimSun" Grid.Column="1"/>
                     <Button Name="Btn29" Content="29" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="70,275,0,0" FontFamily="SimSun" Grid.Column="1"/>
-                    <Button x:Name="Btn9_Copy" Content="9" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="613,79,0,0" FontFamily="SimSun" Grid.Column="1"/>
                 </Grid>
             </TabItem>
 
@@ -112,17 +110,17 @@
                 <Grid>
                     <Lay:LayGroupBox Margin="25,39,80,425" Header="自定义配置" Foreground="White" BorderBrush="#FF555555" Height="80"/>
                     <Button Content="打开已有配置" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Height="24" Margin="45,72,0,0" FontFamily="SimSun"/>
-                    <Button Content="创建新配置文件" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Height="24" Margin="225,72,0,0" FontFamily="SimSun"/>
+                    <Button x:Name="Btn_NewSettings" Content="创建新配置文件" Click="Btn_NewSettings_Click" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Height="24" Margin="225,72,0,0" FontFamily="SimSun"/>
                     <TextBlock TextWrapping="Wrap" Margin="541,519,119,10" Foreground="White"><Run Text="BertWaver 由C#"/><Run Text="/C++"/><Run Text="建构"/></TextBlock>
-                    <Button Content="访问博客" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="24" Margin="686,514,0,0" FontFamily="SimSun"/>
+                    <Button x:Name="Btn_Open_Blog" Click="Btn_Open_Blog_Click" Content="访问博客" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="104" Height="24" Margin="686,514,0,0" FontFamily="SimSun"/>
                 </Grid>
             </TabItem>
 
 
         </TabControl>
         <hc:Divider HorizontalAlignment="Left" Height="10" Margin="10,30,0,0" VerticalAlignment="Top" Width="800" LineStroke="#FF007CCC" LineStrokeThickness="2" RenderTransformOrigin="-5.5,-5.5" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="签到" TextAlignment="Center" Padding="0,3" VerticalAlignment="Top" Width="55" Foreground="White" Height="20" Background="#FF007CCC"/>
-        <TextBlock HorizontalAlignment="Left" Margin="65,10,0,0" TextWrapping="Wrap" TextAlignment="Center" Padding="0,3" VerticalAlignment="Top" Width="55" Foreground="White" Height="20" Background="#FF2D2D2F"><Run Text="设置"/></TextBlock>
+        <TextBlock x:Name="Bar_1" MouseDown="Bar_1_MouseDown" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="签到" TextAlignment="Center" Padding="0,3" VerticalAlignment="Top" Width="55" Foreground="White" Height="20" Background="#FF007CCC"/>
+        <TextBlock x:Name="Bar_2" MouseDown="Bar_2_MouseDown" HorizontalAlignment="Left" Margin="65,10,0,0" TextWrapping="Wrap" TextAlignment="Center" Padding="0,3" VerticalAlignment="Top" Width="55" Foreground="White" Height="20" Background="#FF2D2D2F"><Run Text="设置"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="120,10,0,0" TextWrapping="Wrap" TextAlignment="Center" Padding="0,3" VerticalAlignment="Top" Width="690" Foreground="White" Height="20" Background="#FF2D2D2F" Grid.ColumnSpan="2"/>
         <Grid Margin="10,580,130,8" Background="#FFFEFCC8" RenderTransformOrigin="0.333,4" Height="21">
             <Image Height="18" VerticalAlignment="Top" Width="18" Source="tips.ico" RenderTransformOrigin="0,5" HorizontalAlignment="Left" Margin="2,0,0,0"/>
@@ -137,7 +135,7 @@
         </Lay:LayRichTextBox>
         <ScrollBar x:Name="Main_ScrollBar" Value="{Binding ElementName=Main_RichTextBox, Path=VerticalOffset, Mode=OneWay}" Scroll="ScrollBar_Scroll" Grid.Column="2" HorizontalAlignment="Left" Margin="219,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.941,0.469" Height="576" Background="#FF3E3E41" Cursor="" ViewportSize="10000"/>
         <Button x:Name="Btn_History" Content="历史记录" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Height="24" Margin="79,585,0,0" FontFamily="SimSun" Grid.Column="2"/>
-        <Button x:Name="Btn_Save" Content="立即保存" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Height="24" Margin="10,585,0,0" FontFamily="SimSun" Grid.Column="2"/>
+        <Button x:Name="Btn_Save" Content="立即保存" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Height="24" Margin="10,585,0,0" FontFamily="SimSun" Grid.Column="2" Click="Btn_Save_Click"/>
     </Grid>
 
 </hc:GlowWindow>

@@ -1,0 +1,23 @@
+﻿<hc:GlowWindow x:Class="signup.ClassEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:signup"
+        xmlns:hc="https://handyorg.github.io/handycontrol" 
+        xmlns:Lay="clr-namespace:LayUI.Wpf.Controls;assembly=LayUI.Wpf"
+        mc:Ignorable="d"
+        ActiveGlowColor="Purple"
+        InactiveGlowColor="#651F79"
+        WindowStartupLocation="CenterScreen"
+        Background="#2D2D2F"
+        NonClientAreaBackground="#2D2D2F"
+        NonClientAreaForeground="White"
+        CloseButtonForeground="White"
+        OtherButtonForeground="White"
+        OtherButtonHoverForeground="White"
+        Title="SignUp对象编辑器" Height="649" Width="1008" Icon="123120195873_0s256_f_event_61_0bg.ico" ResizeMode="CanMinimize" FontFamily="SimSun">
+    <Grid>
+        
+    </Grid>
+</hc:GlowWindow>

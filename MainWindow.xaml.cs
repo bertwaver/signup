@@ -86,5 +86,53 @@ namespace signup
         {
 
         }
+
+        private void Btn_Save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //标题栏按钮“签到”被点击事件
+        private void Bar_1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(main_tabcontrol.SelectedIndex==-1 || main_tabcontrol.SelectedIndex==0)
+            {
+                return;
+            }
+            else
+            {
+                Bar_1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007CCC"));
+                Bar_2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2D2D2F"));
+                main_tabcontrol.SelectedIndex = 0;
+            }
+        }
+
+        //标题栏按钮“设置”被点击事件
+        private void Bar_2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (main_tabcontrol.SelectedIndex == -1 || main_tabcontrol.SelectedIndex == 1)
+            {
+                return;
+            }
+            else
+            {
+                Bar_1.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2D2D2F"));
+                Bar_2.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007CCC"));
+                main_tabcontrol.SelectedIndex = 1;
+            }
+        }
+
+        //访问博客按钮被点击事件
+        private void Btn_Open_Blog_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://ixfish.cn/");
+        }
+
+        //创建新配置文件按钮被点击事件
+        private void Btn_NewSettings_Click(object sender, RoutedEventArgs e)
+        {
+            ClassEditor CE;
+            CE.Show();
+        }
     }
 }
