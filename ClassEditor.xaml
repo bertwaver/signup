@@ -18,12 +18,16 @@
         OtherButtonHoverForeground="White"
         Title="SignUp对象编辑器" Height="649" Width="1008" Icon="123120195873_0s256_f_event_61_0bg.ico" ResizeMode="CanMinimize" FontFamily="SimSun">
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="380" Margin="325,105,0,0" VerticalAlignment="Top" Width="605">
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+        <TabControl HorizontalAlignment="Left" Height="665" Margin="0,-45,0,0" VerticalAlignment="Top" Width="1002" Background="#FF2D2D2F" SelectedIndex="0" RenderTransformOrigin="0.5,0.111">
+            <TabItem Header="123">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="30,49,0,0" Height="45" Width="395" Foreground="White" FontSize="32" FontWeight="Bold"><Run Text="你想"/><Run Text="怎么开始编辑？"/></TextBlock>
+                    <Button Content="直接编辑本机当前方案" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="432" Margin="30,119,0,0" Height="40"/>
+                    <Button Content="导入其它配置文件" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="432" Margin="30,184,0,0" Height="40"/>
+                </Grid>
             </TabItem>
-            <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5"/>
+            <TabItem Header="456" Height="30" VerticalAlignment="Bottom">
+                <Grid/>
             </TabItem>
         </TabControl>
 
