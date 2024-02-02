@@ -24,7 +24,7 @@
             <ColumnDefinition Width="655*"/>
             <ColumnDefinition Width="246*"/>
         </Grid.ColumnDefinitions>
-        <TabControl x:Name="main_tabcontrol" HorizontalAlignment="Left" Height="575" Margin="10,0,0,0" VerticalAlignment="Top" Width="800" Background="#FF2D2D2F" SelectionChanged="TabControl_SelectionChanged_2" SelectedIndex="0" RenderTransformOrigin="0.5,0.111" Grid.ColumnSpan="2">
+        <TabControl x:Name="main_tabcontrol" HorizontalAlignment="Left" Height="575" Margin="10,0,0,0" VerticalAlignment="Top" Width="800" Background="#FF2D2D2F" SelectedIndex="0" RenderTransformOrigin="0.5,0.111" Grid.ColumnSpan="2">
             <TabItem Header="123" RenderTransformOrigin="1.39,0.657" Margin="0,0,1,0">
                 <TabItem.RenderTransform>
                     <TransformGroup>
@@ -135,7 +135,7 @@
         </Lay:LayRichTextBox>
         <ScrollBar x:Name="Main_ScrollBar" Value="{Binding ElementName=Main_RichTextBox, Path=VerticalOffset, Mode=OneWay}" Scroll="ScrollBar_Scroll" Grid.Column="2" HorizontalAlignment="Left" Margin="219,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.941,0.469" Height="576" Background="#FF3E3E41" Cursor="" ViewportSize="10000"/>
         <Button x:Name="Btn_History" Content="历史记录" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Height="24" Margin="79,585,0,0" FontFamily="SimSun" Grid.Column="2"/>
-        <Button x:Name="Btn_Save" Content="立即保存" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Height="24" Margin="10,585,0,0" FontFamily="SimSun" Grid.Column="2" Click="Btn_Save_Click"/>
+        <Button x:Name="Btn_Save" Content="立即保存" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Height="24" Margin="10,585,0,0" FontFamily="SimSun" Grid.Column="2"/>
     </Grid>
 
 </hc:GlowWindow>

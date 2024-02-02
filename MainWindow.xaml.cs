@@ -66,32 +66,6 @@ namespace signup
             Main_ScrollBar.ViewportSize = Main_RichTextBox.ViewportHeight;
         }
 
-
-        private void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TabControl_SelectionChanged_1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TabControl_SelectionChanged_2(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Btn_Save_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         //标题栏按钮“签到”被点击事件
         private void Bar_1_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -131,7 +105,7 @@ namespace signup
         //创建新配置文件按钮被点击事件
         private void Btn_NewSettings_Click(object sender, RoutedEventArgs e)
         {
-            ClassEditor CE;
+            ClassEditor CE = new ClassEditor();
             CE.Show();
         }
     }
