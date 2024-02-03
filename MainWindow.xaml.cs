@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 
 namespace signup
 {
@@ -11,17 +11,8 @@ namespace signup
         public MainWindow()
         {
             InitializeComponent();
-            this.KeyDown += OnKeyDown;
             DrawTabControl();
 
-        }
-        //禁用Alt+F4实现
-        private void OnKeyDown(object sender,KeyEventArgs e)
-        {
-            if (e.Key == Key.System && e.SystemKey == Key.F4)
-            {
-                e.Handled = true;
-            }
         }
         
         //绘制tabcontrol边框实现

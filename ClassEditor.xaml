@@ -29,7 +29,7 @@
                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="30,49,0,0" Height="45" Width="395" Foreground="White" FontSize="32" FontWeight="Bold"><Run Text="你想"/><Run Text="怎么开始编辑？"/></TextBlock>
                     <Button x:Name="Btn_EditSelf" Click="Btn_EditSelf_Click" Content="直接编辑本机当前方案" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="432" Margin="30,119,0,0" Height="40"/>
                     <Button Content="导入其它配置文件" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="432" Margin="30,184,0,0" Height="40"/>
-                    <Lay:LayCheckBox Margin="30,239,0,370" BorderBrush="White" Checked="LayCheckBox_Checked" Content="   可视化" HorizontalAlignment="Left" IsEnabled="False" IsChecked="True" Width="70" FontSize="14" Foreground="#FF3F3F45" >
+                    <Lay:LayCheckBox Margin="30,239,0,370" BorderBrush="White" Content="   可视化" HorizontalAlignment="Left" IsEnabled="False" IsChecked="True" Width="70" FontSize="14" Foreground="#FF3F3F45" >
 
                         <!-- 自定义编辑框样式实现开始 -->
                         <Lay:LayCheckBox.Template>
@@ -55,8 +55,9 @@
             </TabItem>
             <TabItem Header="456" Height="30" VerticalAlignment="Bottom">
                 <Grid>
+                    <Lay:LayGroupBox Margin="725,383,10,87" Header="保存与导出配置文件" Foreground="White" BorderBrush="#FF555555"/>
                     <Button Name="Btn1" Content="1" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="34,79,0,0" FontFamily="SimSun"/>
-                    <Button Name="Btn2" Content="2" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="98,79,0,0" FontFamily="SimSun" Click="Btn2_Click"/>
+                    <Button Name="Btn2" Content="2" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="98,79,0,0" FontFamily="SimSun"/>
                     <Button Name="Btn5" Content="5" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="337,79,0,0" FontFamily="SimSun"/>
                     <Button Name="Btn14" Content="14" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="337,144,0,0" FontFamily="SimSun"/>
                     <Button Name="Btn55" Content="55" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="64" Height="40" Margin="34,459,0,0" FontFamily="SimSun"/>
@@ -127,8 +128,10 @@
                         </TextBox.Style>
                     </TextBox>
                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="需要批量修改？你可以在这里直接编辑配置文件。" VerticalAlignment="Top" Margin="725,32,0,0" FontSize="14" Foreground="White" Width="287"/>
-                    <Lay:LayRichTextBox x:Name="Editor_RichTextBox" Margin="725,79,10,275" Height="Auto" Width="Auto" />
+                    <Lay:LayRichTextBox x:Name="Editor_RichTextBox" TextChanged="Editor_RichTextBox_TextChanged" Margin="725,79,10,275" Height="Auto" Width="Auto" />
                     <ScrollBar x:Name="Editor_ScrollBar" Value="{Binding ElementName=Editor_RichTextBox,Path=VerticalOffset,Mode=OneWay}" Scroll="Editor_ScrollBar_Scroll" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="985,79,0,0" Height="280" ViewportSize="10000"/>
+                    <Button x:Name="Btn27_Copy" Content="导出配置文件到本地" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="40" Margin="746,475,0,0" FontFamily="SimSun"/>
+                    <Button x:Name="Btn27_Copy1" Content="保存到本机使用" Style="{StaticResource VsButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" Height="40" Margin="746,419,0,0" FontFamily="SimSun"/>
                 </Grid>
             </TabItem>
         </TabControl>
