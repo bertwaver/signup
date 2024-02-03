@@ -3,6 +3,10 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using System.IO;
+using System.Diagnostics;
+using System.Security.Principal;
+using System.ComponentModel;
+using Microsoft.Win32;
 
 namespace signup
 {
@@ -44,6 +48,79 @@ namespace signup
             EventManager.RegisterClassHandler(typeof(Window), Window.KeyDownEvent, new KeyEventHandler(OnKeyDown), true);
             //检测是否有配置文件并且创建文件
             CreateSettings();
+            //开机自动启动
+            AutoStart();
+        }
+
+        //开机自动启动实现
+        private void AutoStart()
+        {
+            if(!IsAdmin())
+            {
+                UpToAdmin();
+            }
+            else
+            {
+                string registryKeyDirectory = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
+                using (RegistryKey key=Registry.CurrentUser.OpenSubKey(registryKeyDirectory) )
+                {
+                    if(key !=null)
+                    {
+                        if (key.GetValue("signup") == null)
+                        {
+                            key.SetValue("signup", Process.GetCurrentProcess().MainModule.FileName);
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"无法找到系统注册表项：{registryKeyDirectory}。程序将不会在开机自动启动。", "友情提醒：");
+                    }
+                }
+            }
+        }
+
+        //提升程序当前权限实现
+        private void UpToAdmin()
+        {
+            ProcessStartInfo proc = new ProcessStartInfo
+            {
+                UseShellExecute = true,
+                WorkingDirectory=Environment.CurrentDirectory,
+                FileName=Process.GetCurrentProcess().MainModule.FileName,
+                Verb="runas"
+            };
+
+            try
+            {
+                Process.Start(proc);
+                Application.Current.Shutdown();
+            }
+
+            catch(Win32Exception ex)
+            {
+                if(ex.NativeErrorCode==1223)
+                {
+                    MessageBox.Show("程序无法取得管理员权限。一些操作可能在接下来不会被执行，如：开机启动。", "友情提醒：");
+                }
+                else
+                {
+                    MessageBox.Show($"在检查程序权限时出错:{ex.Message}。程序将退出。", "友情提醒：");
+                    Application.Current.Shutdown();
+                }
+            }
+        }
+
+        //检查程序当前权限实现
+        private bool IsAdmin()
+        {
+            WindowsIdentity identity = WindowsIdentity.GetCurrent();
+            WindowsPrincipal principal = new WindowsPrincipal(identity);
+            return principal.IsInRole(WindowsBuiltInRole.Administrator);
+
         }
 
         //禁用Alt+F4实现
@@ -64,9 +141,10 @@ namespace signup
             {
                 try
                 {
-                    using (FileStream fs=File.Create(filePath))
+                    using (StreamWriter writer=new StreamWriter(filePath))
                     {
-
+                        writer.Write(Global.NormalSettings);
+                        Global.SettingsNow = Global.NormalSettings;
                     }
                 }
                 catch(Exception ex)

@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using System.IO;
 
 namespace signup
 {
@@ -12,9 +13,22 @@ namespace signup
         {
             InitializeComponent();
             DrawTabControl();
-
         }
         
+        //读取配置文件实现
+        private void LoadSettingsFiles(string filePath)
+        {
+            if(!File.Exists(filePath))
+            {
+                MessageBox.Show("指定的配置文件不存在，本次导入操作将被终止。", "友情提醒：");
+            }
+            else
+            {
+                string Settings_Load = File.ReadAllText(filePath);
+            }
+
+        }
+
         //绘制tabcontrol边框实现
         private void DrawTabControl()
         {
