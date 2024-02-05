@@ -16,28 +16,35 @@ namespace signup
     public partial class App : Application
     {
         //防止程序多开
-        static Mutex mutex = new Mutex(true, "6298E476-CB3A-455B-9630-23C0CC2DB92C");
+        static Mutex mutex = new Mutex(true, "70A96904-2944-4ED1-9071-CA51684E2657");
         [STAThread]
         public static void Main()
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
             {
-                App app = new App();
-                app.InitializeComponent();
-                //窗口加载前的初始化操作
-                app.App_Init();
-                //加载主窗口
-                MainWindow mainwindow = new MainWindow();
-                mainwindow.Show();
-                //启动应用程序消息循环
-                app.MainWindow = mainwindow;
-                app.Run();
-                //当程序准备退出时释放互斥体
-                mutex.ReleaseMutex();
+                //使用try确保即使程序抛出异常时互斥体也能被正常释放
+                try
+                {
+                    App app = new App();
+                    app.InitializeComponent();
+                    //窗口加载前的初始化操作
+                    app.App_Init();
+                    //加载主窗口
+                    MainWindow mainwindow = new MainWindow();
+                    mainwindow.Show();
+                    //启动应用程序消息循环
+                    app.MainWindow = mainwindow;
+                    app.Run();
+                }
+                finally
+                {
+                    //程序退出时释放互斥体
+                    mutex.ReleaseMutex();
+                }
             }
             else
             {
-                MessageBox.Show("本程序已在运行！","友情提醒：");
+                MessageBox.Show("本程序已在运行！","友情提醒: ");
             }
         }
 
@@ -47,7 +54,7 @@ namespace signup
             //禁用Alt+F4
             EventManager.RegisterClassHandler(typeof(Window), Window.KeyDownEvent, new KeyEventHandler(OnKeyDown), true);
             //检测是否有配置文件并且创建文件
-            CreateSettings();
+            CreateNormalSettings();
             //开机自动启动
             AutoStart();
         }
@@ -62,7 +69,7 @@ namespace signup
             else
             {
                 string registryKeyDirectory = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
-                using (RegistryKey key=Registry.CurrentUser.OpenSubKey(registryKeyDirectory) )
+                using (RegistryKey key=Registry.CurrentUser.OpenSubKey(registryKeyDirectory,true))
                 {
                     if(key !=null)
                     {
@@ -97,6 +104,7 @@ namespace signup
             try
             {
                 Process.Start(proc);
+                mutex.ReleaseMutex();
                 Application.Current.Shutdown();
             }
 
@@ -109,6 +117,7 @@ namespace signup
                 else
                 {
                     MessageBox.Show($"在检查程序权限时出错:{ex.Message}。程序将退出。", "友情提醒：");
+                    mutex.ReleaseMutex();
                     Application.Current.Shutdown();
                 }
             }
@@ -132,8 +141,8 @@ namespace signup
             }
         }
 
-        //创建配置文件实现
-        private void CreateSettings()
+        //创建默认配置文件实现
+        private void CreateNormalSettings()
         {
             string filePath = @"D:\signup\settings.ini";
 
