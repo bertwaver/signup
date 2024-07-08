@@ -22,3 +22,12 @@
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023143415151.png?raw=true">
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232118686.png?raw=true">
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232338685484.png?raw=true">
+
+-----------------------
+# ✔️ 使用方式
+1.直接下载Realse页面中的发布。该页面提供了可供32位操作系统以及64位操作系统运行的版本。(适用于一般使用人员)
+* 本程序仅支持Windows操作系统。经测试，该程序可以在Windows 10及更新的操作系统上正常运行，更早的版本暂时没有测试。
+* 请确保你已经安装了.NET Framework 4.7.2 框架，如果程序无法启动，你需要安装该框架。
+  
+2.克隆仓库的源代码并进行编译。（适用于专业开发人员）
+如果你需要对开机自启动/多开控制/禁止签到时间 等进行更全面的设置或者进行二次开发/整合到其它的系统中时，可以通过克隆并编辑本仓库的源代码来实现。
