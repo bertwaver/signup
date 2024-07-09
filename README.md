@@ -16,13 +16,6 @@
 # 🧩 应用指南
 - 中小学/大学将本程序安装在班班通上，每日早晨学生到校后直接点击自己的名字完成签到。
 - 公司将本系统整合到门禁系统中，同时可加入人脸识别系统，员工每日可通过该系统打卡上班。若某陌生人员不在系统名单中，则拒绝该人员进入。
------------------------
-# 🌄 软件截图
-<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023114.png?raw=true">
-<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090231334444.png?raw=true">
-<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023143415151.png?raw=true">
-<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232118686.png?raw=true">
-<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232338685484.png?raw=true">
 
 -----------------------
 # ✔️ 使用方式
@@ -39,6 +32,14 @@
 -----------------------
 # 💻 开发教程
 请参阅本项目的wiki页面。https://github.com/bertwaver/signup/wiki
+
+-----------------------
+# 🌄 软件截图
+<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023114.png?raw=true">
+<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090231334444.png?raw=true">
+<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023143415151.png?raw=true">
+<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232118686.png?raw=true">
+<img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232338685484.png?raw=true">
 
 -----------------------
 # 📓 关于开源
