@@ -30,16 +30,16 @@
 <b> 对于本软件的具体使用问题，请参阅本项目的wiki页面。</b>
 
 -----------------------
-# 💻 开发教程
-请参阅本项目的wiki页面。https://github.com/bertwaver/signup/wiki
-
------------------------
 # 🌄 软件截图
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023114.png?raw=true">
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090231334444.png?raw=true">
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE20240709023143415151.png?raw=true">
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232118686.png?raw=true">
 <img src="https://github.com/bertwaver/signup/blob/main/pic/QQ%E6%88%AA%E5%9B%BE202407090232338685484.png?raw=true">
+
+-----------------------
+# 💻 开发教程
+请参阅本项目的wiki页面。https://github.com/bertwaver/signup/wiki
 
 -----------------------
 # 📓 关于开源
